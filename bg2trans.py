@@ -1,6 +1,6 @@
 from PIL import Image
 from tkinter import filedialog
-import sys
+from sys import exit
 
 def openFile():
 	return filedialog.askopenfilename()
@@ -10,7 +10,7 @@ def saveAsPath():
 try:
 	img = Image.open(openFile())
 except (AttributeError):
-	sys.exit(0)
+	exit(0)
 	
 rgba = img.convert("RGBA")
 datas = rgba.getdata()
